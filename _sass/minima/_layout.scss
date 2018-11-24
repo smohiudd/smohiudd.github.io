@@ -16,7 +16,7 @@
   line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: 1px;
   margin-bottom: 0;
-  float: left;
+  text-transform: uppercase;
 
   &,
   &:visited {
@@ -203,6 +203,9 @@
 .post-meta {
   font-size: $small-font-size;
   color: $grey-color;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .post-link {
