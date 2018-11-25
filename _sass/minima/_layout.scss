@@ -24,6 +24,16 @@
   }
 }
 
+.home-sub-heading{
+  @include relative-font-size(2);
+  font-family: 'Quicksand', sans-serif;
+  line-height: $base-line-height*0.6;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  color: $grey-color-light;
+
+}
+
 .site-nav {
   float: right;
   font-family: 'Quicksand', sans-serif;
