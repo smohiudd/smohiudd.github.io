@@ -13,6 +13,8 @@ I wanted to create a similar (simplified) DNN model along with a visualization u
 
 The authors of the paper performed a spectral clustering task of the Iowa road network to group the incidents into clusters. I instead used another method to group the incidents: [geohashes](https://en.wikipedia.org/wiki/Geohash). There were a couple reasons for this. First, it was a lot simpler to geohash the lat/lon coordinates and second it would later help me in the visualization. There was obviously a trade off in doing this since it would unbalance by data: some geohashes would have a lot more incidents than others. In exploring clustering methods I came across a spatial clustering algorithm called DBSCAN. It stands for _Density-based spatial clustering of applications with noise_ and clusters points based on proximity to other points and considers far away points as noise. As an exercise to understand the clustering of traffic collisions I clustered the points using the DBSCAN algorithm.
 
+![DBSCAN](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/keras-collision-prediction/dbscan_cluster_crop.png)
+
 I used pandas mostly for the data collection and analysis. Using the Open Data Socrata API, I created a pandas dataframe. From there, I geohashed the lat/lon coordinates and extracted the temporal features from the datetime string (i.e. day, hour, month).
 
 ```python
@@ -34,6 +36,8 @@ start_dt latitude longitude geohash
 ```
 
 Creating a histogram of the temporal features helped me to understand the distribution of traffic incidents during various periods. From the figure below, we can confirm our intuition about incidents occurrences being higher on weekdays and during rush hour periods. I was surprised to see more collisions in June than any other month.
+
+![graphs](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/keras-collision-prediction/time_hist.png)
 
 Now, with binary classification tasks we always need negative samples. We have the positive samples from the data but how do we get the negative samples? The paper used negative sampling method of taking a positive data point and randomly adjusting the month, hour or road features and then checking if it was still a positive data point. If it was not, then they added it to the negative samples. For logistic regression it's important to ensure your dataset is representative of the overall population distribution. Traffic accidents may seem like they occur all time but when you consider a temporal viewpoint, they're quite rare events. Therefore when constructing an overall dataset, particularly with some artificial data, its important to make sure your dataset is representative of what you actually see in real life. The paper had a 1:3 ratio of positive to negative samples.
 
@@ -58,5 +62,6 @@ Once the data and features were sorted out, creating the model was trivial. I us
 
 Finally I used my go-to visualization combination at the present time: React and Mapbox! And this also gave me a chance to try out tensorflow.js, recently released, that allows us to perform inference and even training in the browser. Based on the amount of data we're playing with for this model, training in the browser was painfully slow, so we'll just stick to inference at the moment. Luckily we can load the Keras model and perform the inference using tensorflow.js. The final result can be found here and the github repo for the React/Mapbox visualization
 
+![maps](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/keras-collision-prediction/incident_screenshot2.png)
 
 **[1] Yuan, Z., Zhou, X., Yang, T., & Tamerius, J. (2017). Predicting Traffic Accidents Through Heterogeneous Urban Data : A Case Study.**

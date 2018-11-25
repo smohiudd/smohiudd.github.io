@@ -13,6 +13,8 @@ The network approach to understanding cities using graph theory has been around 
 
 The application of network analysis to transportation planning has been a more recent development. Traditional transportation forecasting involves Original-Destination (OD) demand modelling which helps us understand traffic volume and congestion based on O-D pairs (El-Adaway et. al., 2016). Transportation planning and modeling helps cities plan how to best invest resources in new and existing transportation infrastructure.
 
+![panorama](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/social-streets/panorama_graph.png)
+
 Social Network Analysis gives us another perspective on understanding spatial networks of streets and provides transport planners new insights based on a concept called centrality. There are four measures of centrality that help us understand street networks:
 
 **Degree Centrality** - measures the importance of a node by the number of edges the node has. A node with more edges is more important.
@@ -25,6 +27,7 @@ Social Network Analysis gives us another perspective on understanding spatial ne
 
 Now, to map network centrality measures for a street network, OSMnx is an awesome python library created by Geoff Boeing that can help us. I made a simple network graph of a suburb in Calgary. From there we can plot the closeness centrality for both the primal (nodes) and the dual (edges) graphs.
 
+![mckenzie](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/social-streets/mckenzie_nodes_edges.png)
 
 Satellite View (left), Closeness Centrality with nodes (middle), Closeness Centrality edges (right) of McKenzie Towne in Calgary
 The areas shown in yellow have higher closeness centralities vs. the purple areas that are lower. Intuitively it makes sense based on the land use, intensity in the yellow shaded areas. In the near future, I'm hoping to relate the closeness centralities to transit planning and comparing bus routes in certain suburban communities.

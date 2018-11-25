@@ -7,6 +7,8 @@ date:   2018-03-28 00:00:00 -0700
 
 My goal was to map all Calgary Transit bus routes in a quick, simply UI interface. That lead me to consider pairing React and Mapbox. Since I'm using the City of  Calgary Open Data API (through Socrata) there was no need to set up a database or model using the standard Model Viewer Controller (MVC) architecture so that made things a little simpler.
 
+![bus](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/bus-routes/ct_bus_map2.png)
+
 React is a JavaScript library that only focuses on the "V" aspect of MVC and is ideal for building user interfaces.  It's good at understanding what elements or components in the interface need changing and only re renders those parts. React has pretty good documentation and a [Quick Start](https://reactjs.org/docs/hello-world.html) on their website if you want to an overview.
 
 React and Mapbox work really well together in building quick, efficient user interfaces. Mapbox's blog has an intro [(Mapbox GS JS + React)](https://blog.mapbox.com/mapbox-gl-js-react-764da6cc074a) in integrating the two and was my starting point in getting the map up and running.

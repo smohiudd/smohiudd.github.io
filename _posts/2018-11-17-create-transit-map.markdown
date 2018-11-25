@@ -18,9 +18,11 @@ The basis of designing the map involved understanding the concept of user intera
 6. **Interpreting the System State** - After perceiving the new map representation the user must make sense of the update.
 7. **Evaluating the Outcome** - The evaluation compares the insight with the expected result and determines if the goal has been achieved.
 
-!['Calgary BRT'](https://nodalscapes.files.wordpress.com/2018/10/screenshot5.png?w=1476)
+!['Calgary BRT'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/calgary-brt/screenshot1.png)
 
 I used Mapbox and React to bring the all the concepts together for this project. In terms of fast prototyping, both Mapbox and React are excellent tools. The concept of signifiers and feedback were the most important elements in the interface design. Without cluttering the design and interface, I wanted to create simple signifiers, leading users to click on BRT lines to display the stops. Minimal information is displayed on the map until the user executes a function, after which the map changes state and loads new features (such as stops). The connecting bus stops are shown when a user mouses over the BRT stop and rollover states change when a user mouses over each connecting stop.
+
+![Calgary BRT](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/calgary-brt/screenshot5.png)
 
 The feedback on the state changes are achieved by using auto zoom and pan feature that focuses the user on the highlighted bus route. The user can then perceive the new map feature and evaluate the map representation.
 
