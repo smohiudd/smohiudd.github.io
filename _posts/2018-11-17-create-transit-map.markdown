@@ -2,9 +2,12 @@
 layout: post
 title:  "Designing a Transit Map: User Experience Design"
 date:   2018-11-17 00:00:00 -0700
+excerpt_separator: <!--more-->
 ---
 
 ### With the launch of Calgary's new [Bus Rapid Transit (BRT)][calgary_brt], I experimented with designing an [interactive transit map][brt_map] to visualize the new system. The challenge involved creating an accessible, intuitive map where a user could quickly see the new routes and explore connections.
+
+<!--more-->
 
 Through this exercise, I explored a little about User Experience (UX) Design. UX is defined as a person's perception and response that results from the use or anticipated use of a product, system or service (wikipedia).
 
