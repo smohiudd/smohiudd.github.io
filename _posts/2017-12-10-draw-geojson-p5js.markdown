@@ -53,4 +53,6 @@ endShape(CLOSE);
 
 The final result is a simple map that can be easily manipulated or used for other geospatial visualization.
 
+!['Calgary outline'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/misc/calgary_outline.png)
+
 You can find the GitHub repo [here](https://github.com/smohiudd/Drawing-GeoJSON-in-p5.js).

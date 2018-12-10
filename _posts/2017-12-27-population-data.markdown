@@ -8,3 +8,5 @@ Since the City of Calgary began releasing open data through the [online catalogu
 I thought it might be interesting to visualize the data on a 3D representation of a map. I decided to work with population data for each community in Calgary, visually displaying the data something like high rise buildings.  Many of the "highest" populations are in suburban communities like Evergreen, Coventry Hills or Auburn Bay - areas that ironically, are void of any high density employment nodes.
 
 I developed the visualization following the GeoJSON map I created earlier. The idea to use a 3D representation was inspired by recent tutorial videos by Daniel Shiffman on the [Coding Train](https://www.youtube.com/watch?v=nqiKWXUX-o8&list=PLRqwX-V7Uu6bPhi8sS1hHJ77n3zRO9FR_) using WebGL. I found this project to be a good exercise in understating the different considerations when working in 3D and the use of translations and rotations in X,Y,Z axis.
+
+!['3d Population'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/misc/3d-population.png)
