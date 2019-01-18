@@ -23,6 +23,7 @@ twitter_username: saadiqmohiuddin
 github_username:  smohiudd
 linkedin_username:  saadiqmohiuddin
 show_excerpts: True
+future: True
 
 # Build settings
 markdown: kramdown
