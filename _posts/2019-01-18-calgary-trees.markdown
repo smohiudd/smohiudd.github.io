@@ -69,6 +69,6 @@ We see some interesting patterns from the above graphs. The Deciduous trees are 
 
 This is my first attempt at using R for data analysis. After mostly using Python + Pandas, it was interesting to test out a different workflow and syntax. Overall, I found R effective in processing large datasets. It was also very useful in rendering tiles and facet grids, something that’s a little challenging in Python using Matplotlib. I usually use the Shapely package in Python for my geospatial analysis. Sf for R (a new package that is still gaining traction in the R community) was just as simple to use for geospatial analysis. The real winner in my opinion was ggplot2. The ease of graphing was amazing and something I will definitely come back to in the future.
 
-Here is the [link](https://github.com/smohiudd/calgary-trees) the github repo.
+Here is a [link](https://github.com/smohiudd/calgary-trees) to the github repo.
 
 [open_data]:https://data.calgary.ca/Environment/Public-Trees/tfs4-3wwa
