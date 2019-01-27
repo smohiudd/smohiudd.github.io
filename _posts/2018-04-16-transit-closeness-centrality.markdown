@@ -2,6 +2,7 @@
 layout: post
 title:  "Transit Connectivity and Network Centrality"
 date:   2018-04-16 00:00:00 -0700
+description: "How do we know if transit routes are traveling through the most connected areas of a City? If we were to map bus routes and network centrality for communities what would that tell us about transit planning? Continuing on from my post about Social Street Networks, I've created an interactive map showing Calgary Transit bus routes and closeness centrality measures of the neighbourhoods they intersect"
 ---
 ### How do we know if transit routes are traveling through the most connected areas of a City? If we were to map bus routes and network centrality for communities what would that tell us about transit planning? Continuing on from my post about Social Street Networks, I've created an [interactive map](https://smohiudd.github.io/bus-route-closeness/) showing Calgary Transit bus routes and closeness centrality measures of the neighbourhoods they intersect.
 

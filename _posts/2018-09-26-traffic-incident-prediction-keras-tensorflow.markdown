@@ -2,6 +2,7 @@
 layout: post
 title:  "Predict and Visualize Traffic Collisions using Keras and tensorflow.js"
 date:   2018-09-26 00:00:00 -0700
+description: "A simple traffic collision predictor and visualization created using Keras, tensorflow.js, React and Mapbox."
 ---
 ### A simple traffic collision predictor and visualization created using Keras, tensorflow.js, React and Mapbox.
 

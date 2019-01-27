@@ -2,6 +2,7 @@
 layout: post
 title:  "The Online Transit Map: Challenging a One Size Fits All Approach"
 date:   2018-11-15 00:00:00 -0700
+description: "Transit agencies must influence how their transit maps are displayed online. By relinquishing the design and mapping to tech companies, they lose out on the opportunity to communicate effectively with their customers."
 ---
 
 ### Transit agencies must influence how their transit maps are displayed online. By relinquishing the design and mapping to tech companies, they lose out on the opportunity to communicate effectively with their customers.

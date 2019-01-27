@@ -2,6 +2,7 @@
 layout: post
 title:  "Social Street Networks"
 date:   2018-02-19 00:00:00 -0700
+description: "I'm always excited about discovering new ways to visualize how cities are planned and how street networks impact mobility and use. Recently I came across the study of Network Science and Social Network Analysis and its application to Transportation Planning."
 ---
 ### I'm always excited about discovering new ways to visualize how cities are planned and how street networks impact mobility and use. Recently I came across the study of Network Science and Social Network Analysis and its application to Transportation Planning.
 

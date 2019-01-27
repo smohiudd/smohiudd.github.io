@@ -2,6 +2,7 @@
 layout: post
 title:  "Drawing GeoJSON files in p5.js"
 date:   2017-12-10 00:00:00 -0700
+description: "An example of how to use p5.js to draw geojson shapes"
 ---
 Although using mapping application like Google Maps, Mapbox or Leaflet can be extremely useful, I was looking for a way to draw simple GeoJSON files in my Processing/p5.js sketches. I didn't want to use a library to integrate my GeoJSON files and I wanted more flexibility in how my maps could be drawn and manipulated. I came across this [post](http://mikefowler.me/journal/2014/06/10/drawing-geojson-in-a-canvas) by Mike Fowler that achieved exactly what I was considering so I went about implementing this method in p5.js.
 

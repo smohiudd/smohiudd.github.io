@@ -2,6 +2,7 @@
 layout: post
 title:  "Using Open Data and Machine Learning to Predict Traffic Collisions"
 date:   2018-09-26 00:00:00 -0700
+description: "With the recent release of a traffic incident data set in Calgary, I was interested in utilizing the data to create a simple prediction model using machine learning. The availability of traffic incident data is still lacking in parts of Canada and its release can create an opportunity to analyze, interpret and predict urban transport behaviours."
 ---
 ### With the recent release of a traffic incident data set in Calgary, I was interested in utilizing the data to create a simple [prediction model][model] using machine learning. The availability of traffic incident data is still lacking in parts of Canada and its release can create an opportunity to analyze, interpret and predict urban transport behaviours.
 

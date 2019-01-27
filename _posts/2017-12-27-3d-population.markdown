@@ -2,6 +2,7 @@
 layout: post
 title:  "3D Mapping – Visualizing Population Data"
 date:   2017-12-27 00:00:00 -0700
+description: "A 3D population visualization of Calgary"
 ---
 Since the City of Calgary began releasing open data through the [online catalogue](https://data.calgary.ca/browse) I've been trying to come up with an interesting way to represent and visualize census data. It's often difficult to represent something as boring as population and demographic data in a compelling way. The City of Calgary's own [census page](http://www.calgary.ca/CA/city-clerks/Pages/Election-and-information-services/Civic-Census/2017-Results.aspx) presents the data in pages and pages of tables and graphs.
 

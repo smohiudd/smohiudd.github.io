@@ -2,6 +2,7 @@
 layout: post
 title:  "Working with GTFS Realtime Transit Data"
 date:   2018-10-30 00:00:00 -0700
+description: "Decoding GTFS Realtime transit data can be a challenging endeavour for simple front end development. By using protobuf.js, AWS Lambda and Serverless, we can make the data accessible for web application and visualizations."
 ---
 ### Decoding GTFS Realtime transit data can be a challenging endeavour for simple front end development. By using protobuf.js, AWS Lambda and Serverless, we can make the data accessible for web application and visualizations.
 

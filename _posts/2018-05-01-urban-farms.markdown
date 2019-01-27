@@ -2,6 +2,7 @@
 layout: post
 title:  "Urban Farms, Land Use and Soil Contamination"
 date:   2018-05-01 00:00:00 -0700
+description: "Urban farming offers cities both economic and social benefits. With increasing populations migrating to urban centres, the development of sustainable, secure foods sources is a boon, however the potential for soil contamination is a barrier."
 ---
 ### Urban farming offers cities both economic and social benefits. With increasing populations migrating to urban centres, the development of sustainable, secure foods sources is a boon, however the potential for soil contamination is a barrier.
 

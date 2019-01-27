@@ -2,6 +2,7 @@
 layout: post
 title:  "Using React and Mapbox to Map Bus Routes"
 date:   2018-03-28 00:00:00 -0700
+description: "With all the hype surrounding React and Angular and JavaScript frameworks lately, it's probably time to get familiar with this new fad. My recent post and project about network analysis required some type of application UI so why not try out React?"
 ---
 ### With all the hype surrounding React and Angular and JavaScript frameworks lately, it's probably time to get familiar with this new fad. My recent post and project about [Network Analysis](https://nodalscapes.wordpress.com/2018/02/19/social-street-networks/) required some type of application UI so why not try out [React](https://reactjs.org/)?
 

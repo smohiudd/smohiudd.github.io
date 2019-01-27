@@ -2,6 +2,7 @@
 layout: post
 title:  "Designing a Transit Map: User Experience Design"
 date:   2018-11-17 00:00:00 -0700
+description: "With the launch of Calgary's new BRT, I experimented with designing an interactive map to visualize the new system. The challenge involved creating an accessible, intuitive map where a user could quickly see the new routes and explore connections."
 excerpt_separator: <!--more-->
 ---
 

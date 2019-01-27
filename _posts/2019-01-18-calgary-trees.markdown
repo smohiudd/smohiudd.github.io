@@ -2,6 +2,7 @@
 layout: post
 title:  "Exploratory Data Analysis of Urban Trees in Calgary"
 date:   2019-01-17 00:00:00 -0700
+description: "The City of Calgary estimates there are almost 7 million trees growing within city limits. The urban forest we see today is the result of over a century of careful planning, planting and maintenance. Using a dataset of public trees, I did a short exploratory data analysis to understand the distribution of tree species."
 excerpt_separator: <!--more-->
 ---
 

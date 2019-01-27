@@ -2,6 +2,7 @@
 layout: post
 title:  "Using Deep Learning to Perceive Streetscape Quality"
 date:   2018-02-07 00:00:00 -0700
+description: "With semantic segmentation of street images, the usual question is: how can this be applied to autonomous driving? With street features such as light poles, pedestrians and road markings identified in the output model inference, this can help us greatly in navigating the physical environment."
 ---
 Through my research on the basic operations of Artificial Neural Networks (ANN) and deep learning I've experimented with Caffe and a (somewhat) dated program called [Segnet](http://mi.eng.cam.ac.uk/projects/segnet/). Although it was developed in 2015 I was intrigued by the application of pixel wise segmentation of streets.
 

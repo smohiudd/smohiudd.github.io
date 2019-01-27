@@ -2,6 +2,7 @@
 layout: post
 title:  "Drawing Roads with GeoJSON and Processing"
 date:   2018-01-02 00:00:00 -0700
+description: "Continuing with my 3D mapping theme, I've built onto my previous map with GeoJSON road data from the City of Calgary Open Data catalogue."
 ---
 Continuing with my 3D mapping theme, I've built onto my previous map with GeoJSON road data from the City of Calgary Open Data catalogue.
 
