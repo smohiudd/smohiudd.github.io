@@ -2,6 +2,7 @@
 layout: post
 title:  "Using Google DeepLab v3+ to Evaluate Streetscape Quality"
 date:   2018-07-08 00:00:00 -0700
+published: false
 description: "I wrote a simple script that extracted the pedestrian routing options from Google Maps, cut the routes into smaller segments and finally applied an algorithm that scored the DeepLab output of Google Street View images. To visualize the scores, I made a simple interactive map with MapBox and React"
 ---
 ### I'm a little late posting a follow up to my [original article](https://nodalscapes.wordpress.com/2018/02/07/using-neural-networks-to-understand-street-quality/) about using Machine Learning, specifically Deep Learning to help segment and classify streetscapes. It was actually the release of [Google's Deep Lab V3+ Convolutional Neural Network (CNN)](https://ai.googleblog.com/2018/03/semantic-image-segmentation-with.html) in March 2018 that drew me back to this topic. Here is the [final result](final result) of evaluating pedestrian routes in the Ramsay neighbourhood of Calgary.
