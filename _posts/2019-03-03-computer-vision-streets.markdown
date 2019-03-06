@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 
 <!--more-->
 
-For this exercise, I'm working with 100 street level images divided into 80 images for training and 20 images for test. Using so few images will not produce a performant model, but this exercise was mainly to familiarize myself with the general CNN training workflow as well as Tensorflow’s data pipeline.
+For this exercise, I'm working with 100 Google Street View images divided into 80 images for training and 20 images for test. Using so few images will not produce a performant model, but this exercise was mainly to familiarize myself with the general CNN training workflow as well as Tensorflow’s data pipeline.
 
 <!-- !['mapillary example'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/unet-segmentation/mapillary_example.png)
 _Sample from Mapillary's [Vistas](https://www.mapillary.com/dataset/vistas?pKey=t0dsC5bhsYKSaL__Rggvyw&lat=20&lng=0&z=1.5) dataset semantic segmentation ground truth_ -->
