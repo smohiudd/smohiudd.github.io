@@ -24,7 +24,7 @@ This post is divided into the following sections:
 5. [**Training the Model**](#5-training-the-model)
 6. [**Prediction**](#6-prediction)
 
-**Semantic segmentation**, in a machine learning context, involves predicting and classifying each pixel in an image according to a set of labels. Before the popularity of deep learning, there weren’t many tools (at least available to your average computer vision enthusiast) that could help us successfully segment parts of an image. The [OpenCV](https://opencv.org/) library was once popular and used methods such as thresholding, achieving variable results. Other traditional ML algorithms were too slow for any meaningful applications. The progress of computer vision with the help of Deep Learning has made tremendous progress in segmentation tasks. Not only can we now segment complex images, but the prediction is near real time and highly accurate.
+**Semantic segmentation**, in a machine learning context, involves predicting and classifying each pixel in an image according to a set of labels. Before the popularity of deep learning, there weren’t many tools (at least available to your average computer vision enthusiast) that could help us successfully segment parts of an image. The [OpenCV](https://opencv.org/) library was once popular and used methods such as thresholding, achieving variable results. Other traditional ML algorithms were too slow for any meaningful applications. Computer vision, with the help of Deep Learning, has made tremendous progress in segmentation tasks. Not only can we now segment complex images, but the prediction is near real time and highly accurate.
 
 #### 1. Image Labelling (Ground Truth)
 
