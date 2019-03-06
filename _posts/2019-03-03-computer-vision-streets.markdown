@@ -12,8 +12,8 @@ excerpt_separator: <!--more-->
 
 For this exercise, I'm working with 100 street level images divided into 80 images for training and 20 images for test. Using so few images will not produce a performant model, but this exercise was mainly to familiarize myself with the general CNN training workflow as well as Tensorflow’s data pipeline.
 
-!['loss/mIOU metric graph'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/unet-segmentation/mapillary_example.png)
-_Sample from Mapillary's [Vistas](https://www.mapillary.com/dataset/vistas?pKey=t0dsC5bhsYKSaL__Rggvyw&lat=20&lng=0&z=1.5) dataset semantic segmentation ground truth_
+<!-- !['mapillary example'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/unet-segmentation/mapillary_example.png)
+_Sample from Mapillary's [Vistas](https://www.mapillary.com/dataset/vistas?pKey=t0dsC5bhsYKSaL__Rggvyw&lat=20&lng=0&z=1.5) dataset semantic segmentation ground truth_ -->
 
 This post is divided into the following sections:
 
@@ -28,7 +28,7 @@ This post is divided into the following sections:
 
 #### 1. Image Labelling (Ground Truth)
 
-Before beginning to train your model you need a dataset of images and corresponding ground truth labels. Image labelling can be one of the biggest roadblocks to getting started training your own computer vision or segmentation model. It involves outlining individual objects in an image by drawing polygons - a time consuming and tedious process. Finding an application or platform to label your images is another hurdle and can be quite confusing. There are a handful applications, both fee based and open sourced, that do an adequate job of the task:
+Before beginning to train your model you need a dataset of images and corresponding ground truth labels. Image labelling can be one of the biggest roadblocks to getting started training your own computer vision or segmentation model. It involves outlining individual objects in an image by drawing polygons - a time consuming and tedious process. Finding an application or platform to label your images is another hurdle and can be quite confusing. There are a handful of applications, both fee based and open sourced, that do an adequate job of the task:
 
 * [Labelme](http://labelme.csail.mit.edu/Release3.0/)
 * [Labelbox](https://www.labelbox.com/)
@@ -171,7 +171,7 @@ val_ds = val_ds.map(tf_serialize_example)
 
 #### 5. Training the Model
 
-I used **AWS EC2** to train the model using a **P2.xlarge** spot instance. I’m sure there are countless tips and tricks to efficiently deal with AWS’ cumbersome interface and connecting to the container using SSH. I found the easiest way for me was to upload my TFrecords to S3 and access the data via my EC2 container. It very convenient to separate my model script and data for the times when my spot instance expired and I need to fire up another container. For 100 iterations it cost be around $0.50.
+I used **AWS EC2** to train the model using a **P2.xlarge** spot instance. I’m sure there are countless tips and tricks to efficiently deal with AWS’ cumbersome interface and connecting to the container using SSH. I found the easiest way for me was to upload my TFrecords to S3 and access the data via my EC2 container. It was very convenient to separate my model script and data for the times when my spot instance expired and I need to fire up another container. For 100 iterations it cost be around $0.50.
 
 The training metric for semantic segmentation is something important to consider. Typically in journals you will see the “mIOU” as the training metric. This stands for **“mean Intersection Over Union”** and is a ratio of true positives, false positives, true negatives, and false negatives averaged over all classes in the image. Jeremy Jordan probably has the best explanation of mIOU including some helpful images so I’m going to provide a [link](https://www.jeremyjordan.me/evaluating-image-segmentation-models/) to his website.
 
