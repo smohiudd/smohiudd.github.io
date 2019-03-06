@@ -171,7 +171,7 @@ val_ds = val_ds.map(tf_serialize_example)
 
 #### 5. Training the Model
 
-I used **AWS EC2** to train the model using a **P2.xlarge** spot instance. I’m sure there are countless tips and tricks to efficiently deal with AWS’ cumbersome interface and connecting to the container using SSH. I found the easiest way for me was to upload my TFrecords to S3 and access the data via my EC2 container. It was very convenient to separate my model script and data for the times when my spot instance expired and I need to fire up another container. For 100 iterations it cost be around $0.50.
+I used **AWS EC2** to train the model using a **P2.xlarge** spot instance. I’m sure there are countless tips and tricks to efficiently deal with AWS’ cumbersome interface and connecting to the container using SSH. I found the easiest way for me was to upload my TFrecords to S3 and access the data via my EC2 container. It was very convenient to separate my model script and data for the times when my spot instance expired and I need to fire up another container. For 100 iterations it cost me around $0.50.
 
 The training metric for semantic segmentation is something important to consider. Typically in journals you will see the “mIOU” as the training metric. This stands for **“mean Intersection Over Union”** and is a ratio of true positives, false positives, true negatives, and false negatives averaged over all classes in the image. Jeremy Jordan probably has the best explanation of mIOU including some helpful images so I’m going to provide a [link](https://www.jeremyjordan.me/evaluating-image-segmentation-models/) to his website.
 
