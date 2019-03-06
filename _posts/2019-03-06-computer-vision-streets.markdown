@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Segmenting Street-Level Images with Computer Vision using Tensorflow"
-date:   2019-03-03 00:00:00 -0700
+date:   2019-03-06 00:00:00 -0700
 description: "In this post I outline my workflow in training a toy convolutional neural network (CNN) model from start to finish including creating my own ground truth images. The model is then used to predict semantic segmentation masks of street-level images, a tool popular in autonomous vehicle driving applications."
 excerpt_separator: <!--more-->
 ---
