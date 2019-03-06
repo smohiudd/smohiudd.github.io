@@ -17,18 +17,18 @@ _Sample from Mapillary's [Vistas](https://www.mapillary.com/dataset/vistas?pKey=
 
 This post is divided into the following sections:
 
-1. [**Image Labelling (Ground Truth)**](#1-image-labelling-ground-truth))
+1. [**Image Labelling (Ground Truth)**](#1-image-labelling-ground-truth)
 2. [**Creating Image Label Masks**](#2-create-image-masks)
 3. [**Input data/image pipeline & creating TFRecords**](#4-input-data-pipeline-and-creating-tfrecords)
 4. [**Building the Model**](#3-building-the-model)
 5. [**Training the Model**](#5-training-the-model)
 6. [**Prediction**](#6-prediction)
 
-**Semantic segmentation**, in a machine learning context, involves predicting and classifying each pixel in an image according a set of labels. Before the deep learning mania we see today, there weren’t many tools (at least available to your average computer vision enthusiast) that could help you successfully segment parts of an image. The CV2 library was once popular and used methods such as thresholding, achieving variable results. Other traditional ML algorithms were too slow for any meaningful applications. The progress of computer vision with the help of Deep Learning has made tremendous progress in segmentation tasks. Not only can we now segment complex images, but the prediction is near real time and highly accurate.
+**Semantic segmentation**, in a machine learning context, involves predicting and classifying each pixel in an image according to a set of labels. Before the popularity of deep learning, there weren’t many tools (at least available to your average computer vision enthusiast) that could help us successfully segment parts of an image. The [OpenCV](https://opencv.org/) library was once popular and used methods such as thresholding, achieving variable results. Other traditional ML algorithms were too slow for any meaningful applications. The progress of computer vision with the help of Deep Learning has made tremendous progress in segmentation tasks. Not only can we now segment complex images, but the prediction is near real time and highly accurate.
 
 #### 1. Image Labelling (Ground Truth)
 
-Before beginning to train your model you need a dataset of images and corresponding ground truth labels. Image labelling can be one of the biggest roadblocks to getting started training your own computer vision or segmentation model. It involves outlining individual objects in an image by drawing polygons - a time consuming and tedious process. Finding an application or platform to label your images is another hurdle and can be quite confusing. There are some applications, both fee based and open sourced, that do an adequate job of the task:
+Before beginning to train your model you need a dataset of images and corresponding ground truth labels. Image labelling can be one of the biggest roadblocks to getting started training your own computer vision or segmentation model. It involves outlining individual objects in an image by drawing polygons - a time consuming and tedious process. Finding an application or platform to label your images is another hurdle and can be quite confusing. There are a handful applications, both fee based and open sourced, that do an adequate job of the task:
 
 * [Labelme](http://labelme.csail.mit.edu/Release3.0/)
 * [Labelbox](https://www.labelbox.com/)
@@ -37,7 +37,7 @@ Before beginning to train your model you need a dataset of images and correspond
 * [labelImg](https://github.com/tzutalin/labelImg)
 * [VATIC](https://github.com/cvondrick/vatic)
 
-Each application has varying qualities of UI and usability and its best to find one that suits labelling needs and workflow. You must also be familiar with some of the image annotation formats such as **PASCAL VOC, COCO**, etc used by popular image datasets. PASCAL VOC uses XML while COCO uses JSON for example. It ultimately doesn’t matter which you use as long as you can convert the polygon points into a mask image.
+Each application has varying qualities of UI and usability and it's best to find one that suits your labelling needs and workflow. You must also be familiar with some of the image annotation formats such as **PASCAL VOC, COCO**, etc used by popular image datasets. PASCAL VOC uses XML while COCO uses JSON for example. It ultimately doesn’t matter which you use as long as you can convert the polygon points into a mask image.
 
 !['labelbox interface'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/unet-segmentation/labelbox_screen.png)
 _Labelbox interface_
@@ -108,14 +108,14 @@ I chose the **U-Net architecture** because it has several advantages:
 
 * Performs well on small training data sets (the origins of U-Net paper are based on biomedical applications, where training sets are small). [Here's](https://www.microsoft.com/developerblog/2018/07/18/semantic-segmentation-small-data-using-keras-azure-deep-learning-virtual-machine/) an interesting example of using 100 training samples to train a U-Net model.
 * Responds well to data augmentation
-* Input image size is trivial since there are no fully connected layers
+* Input image dimensions are trivial since there are no fully connected layers
 * Model can be easily scaled for multi class segmentation
 
 !['unet model'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/unet-segmentation/unet.png)
 
 _Photo from Ronnenberger et. al, 2015_
 
-The Tensorflow website had an excellent [example](https://github.com/tensorflow/models/blob/master/samples/outreach/blogs/segmentation_blogpost/image_segmentation.ipynb) of a U-Net application for binary semantic segmentation which includes data augmentation. This was a good starting point for my toy example. Since I’m dealing with multi class segmentation, we’ll need to make some modification to the code.
+The Tensorflow website has an excellent [example](https://github.com/tensorflow/models/blob/master/samples/outreach/blogs/segmentation_blogpost/image_segmentation.ipynb) of a U-Net model for binary semantic segmentation which includes data augmentation. This was a good starting point for my toy example. Since I’m dealing with multi class segmentation, we’ll need to make some modification to the code.
 
 The example uses the dice loss function which is common for binary segmentation. For multi class applications we’ll change the loss function to **categorical cross entropy**. Also we need to change the activation for the final layer to **softmax** instead of sigmoid.
 
@@ -126,7 +126,7 @@ Optimizing data pipeline in deep learning models is often an overlooked but very
 
 > “GPUs and TPUs can radically reduce the time required to execute a single training step. Achieving peak performance requires an efficient input pipeline that delivers data for the next step before the current step has finished. The `tf.data` API helps to build flexible and efficient input pipelines. “
 
-The tensorflow example consumes data through the `tf.data` api and the `Dataset.from_tensor_slices()` call. `tf.data` greatly improves the performance and efficiency of reading lots of a data and is the preferred way to get data into your tensorflow model. Although our data set is small and we can fit all the images to memory using `Dataset.from_tensor_slices()`, I wanted to try using TFRecords, a binary format. Using TFRecords just makes it easier and way more efficient for your tensorflow model to handle your data, saving it as a sequence of binary strings. It also improves your workflow since you’re left dealing with a handful of TFRecord files vs. hundreds or thousands of image files.
+The Tensorflow example consumes data through the `tf.data` api and the `Dataset.from_tensor_slices()` call. `tf.data` greatly improves the performance and efficiency of reading lots of a data and is the preferred way to get data into your tensorflow model. Although our data set is small and we can fit all the images to memory using `Dataset.from_tensor_slices()`, I wanted to try using TFRecords. Using TFRecords makes it easier and far more efficient for your Tensorflow model to handle your data, saving it as a sequence of binary strings. It also improves your workflow since you’re left dealing with a handful of TFRecord files vs. hundreds or thousands of image files.
 
 Here are some useful resources on creating an image data pipeline and TFRecords :
 
@@ -219,7 +219,7 @@ The final loss/mIOU charts seem somewhat reasonable for a toy example given that
 
 #### 6. Prediction
 
-Finally, lets predict the output masks given some sample images. The output looks acceptable if you have few classes but falls apart when predicting many classes and complex representations.
+Finally, lets predict the output masks given some sample images. The output looks acceptable for images with few classes but fails when predicting many classes and complex representations.
 
 !['prediction image'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/unet-segmentation/prediction_1.png)
 
