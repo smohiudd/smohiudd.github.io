@@ -14,6 +14,9 @@ permalink: /resources/
 * [The Pudding](https://pudding.cool/)
 * [Dmitry Shkolnik](https://www.dshkol.com/)
 * [ml5js](https://ml5js.org/)
+* [Jeremy Jordan](https://www.jeremyjordan.me/)
+* [Shared Streets](https://sharedstreets.io/)
+* [Daniel Shiffman](https://shiffman.net/)
 
 #### Machine Learning & Deep Learning Books
 * **Deep Learning** (Goodfellow, Bengio, Courville, 2015)
@@ -25,9 +28,10 @@ permalink: /resources/
 * **MIT - Introduction to Computational Thinking and Data Science (2016)** <https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/>
 
 
-#### ML Resources in Calgary
+#### Data Science & ML Resources in Calgary
 
+* **R Meetup Calgary** <https://imstatsbee.github.io/calgaryr/>
+* **Artificial Intelligence Meetup Calgary** <https://www.meetup.com/meetup-group-wmHrkGoA/>
 * **Cybera** <https://www.cybera.ca/services/data-science/>
 * **Alberta Machine Intelligence Institute** <https://www.amii.ca/>
-* **R Meetup Calgary** <https://imstatsbee.github.io/calgaryr/>
-* **Artificial Intelligence Meetup** <https://www.meetup.com/meetup-group-wmHrkGoA/>
+
