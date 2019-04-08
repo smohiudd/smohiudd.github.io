@@ -10,6 +10,7 @@ permalink: /experiments/
 * [Analyzing Transit Connectivity with Network Analysis](https://smohiudd.github.io/bus-route-closeness/)
 * [Street Score Map](https://saadiqm.com/street-score-map/)
 * [Mapping Bus Routes](https://saadiqm.com/react-mapbox-bus-routes/)
+* [Mapping Realtime Bus Locations](http://saadiqm.com/realtime-bus-mapping/)
 
 #### Machine Learning
 
