@@ -43,6 +43,6 @@ Transit map designer Cameron Booth has a great [tutorial](https://www.cambooth.n
 
 ***Iterations of the streetcar map design***
 
-The result shows a vastly different fixed rail transit system than we see today with the CTrain. The dense connections of lines in the inner city have been replaced by lines spurring to the far reaching suburbs. To visualize the comparison, I made up a simple slider page that overlays the 1945 and 2019 maps.
+The result shows a vastly different fixed rail transit system than we see today with the CTrain. The dense connections of lines in the inner city have been replaced by lines spurring to the far reaching suburbs. To visualize the comparison, I made up a simple slider [comparison page](http://saadiqm.com/calgary-streetcar-map-compare/) that overlays the 1945 and 2019 maps.
 
 Although the demise of Calgary’s streetcars was probably inevitable, it’s interesting to think about what it would look like it were it still around today. We must also consider how fixed rail lines affected development along so-called [main streets](http://www.calgary.ca/PDA/pd/Pages/Main-Streets/Main-Streets.aspx) that we are hoping to again revitalize today.
