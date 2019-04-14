@@ -6,19 +6,19 @@ description: "Calgary once had an extensive street car network. Using a sample o
 excerpt_separator: <!--more-->
 ---
 
-### Calgary once had an extensive street car network. Using a copy of a 1945 map, I created a streetcar system map of the now defunct Calgary Municipal Railway. The result shows a vastly different fixed rail transit network than we see today.
+### Calgary once had an extensive street car network. Using a copy of a 1945 map, I created a streetcar system map of the now defunct Calgary Municipal Railway. The [result](#comparing-the-streetcar-to-ctrain-map) shows a vastly different fixed rail transit network than we see today.
 
 <!--more-->
 
 !['streetcar map sketch 2'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/streetcar-map/header_image.png)
 
-The Guardian published an [article](https://www.theguardian.com/cities/2019/apr/03/mapped-historic-public-transit-systems-v-their-modern-equivalents) about artist Jake Berman who mapped historic public transit maps of different cities in North America and compared them to current day system maps. It shows a striking visualization of how, in almost all cases, public transit (rail) systems have diminished over a generation and replaced with skeletons of their former systems. It’s been well documented in postwar Los Angeles and Detroit how automobile companies purchased struggling street car systems, dismantling them and replacing the rail cars with buses. It’s also likely that streetcars of that era simply couldn’t compete with the automobile and the subsidized system of roads, freeways and bridges built for cars.
+The Guardian published an [article](https://www.theguardian.com/cities/2019/apr/03/mapped-historic-public-transit-systems-v-their-modern-equivalents) about artist Jake Berman who mapped historic public transit maps of different cities in North America and compared them to current day system maps. It shows a striking visualization of how, in almost all cases, public transit (rail) systems have diminished over a generation and replaced with skeletons of their former systems. The causes have been controversial at times. It’s been well documented in postwar Los Angeles and Detroit how automobile companies purchased struggling street car systems, dismantling them and replacing the rail cars with buses. But more likely, it's possible that streetcars of that era simply couldn’t compete with the automobile and the subsidized system of roads, freeways and bridges built for cars.
 
 !['streetcar map sketch 2'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/streetcar-map/library1.png)
 
 ***Copy of 1945 Calgary Municipal Railway map at the Central Library***
 
-I was interested to see how Calgary’s now defunct Municipal Railway looked like before it was ultimately dismantled in the 1960s. I wasn’t able to find any online resources that had either a schematic or actual system map so that lead me to do some research of my own. Fortunately, the Central Library had a copy of a customer map and time table from 1945 [any excuse to visit the new library!].
+I was interested to see how Calgary’s now defunct Municipal Railway looked like before it was ultimately dismantled in the 1950s. I wasn’t able to find any online resources that had either a schematic or actual system map so that lead me to do some research of my own. Fortunately, the Central Library had a copy of a customer map and time table from 1945 [any excuse to visit the new library!].
 
 !['streetcar map sketch 2'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/streetcar-map/library2.png)
 
@@ -43,6 +43,10 @@ Transit map designer Cameron Booth has a great [tutorial](https://www.cambooth.n
 
 ***Iterations of the streetcar map design***
 
-The result shows a vastly different fixed rail transit system than we see today with the CTrain. The dense connections of lines in the inner city have been replaced by lines spurring to the far reaching suburbs. To visualize the comparison, I made up a simple slider [comparison page](http://saadiqm.com/calgary-streetcar-map-compare/) that overlays the 1945 and 2019 maps. Although the demise of Calgary’s streetcars was probably inevitable, it’s interesting to think about what it would look like it were it still around today.
+#### Comparing the streetcar to Ctrain map
+
+The shows a vastly different fixed rail transit system than we see today with the CTrain. The dense connections of lines in the inner city have been replaced by lines spurring to the suburbs. To visualize the comparison, I made up a simple slider [comparison page](http://saadiqm.com/calgary-streetcar-map-compare/) that overlays the 1945 and 2019 maps. Although the demise of Calgary’s streetcars was probably inevitable, it’s interesting to think about what it would look like it were it still around today.
+
 
 !['streetcar map sketch 2'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/streetcar-map/screen_rec.gif)
+[link to the map](http://saadiqm.com/calgary-streetcar-map-compare/)
