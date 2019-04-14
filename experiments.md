@@ -11,6 +11,7 @@ permalink: /experiments/
 * [Street Score Map](https://saadiqm.com/street-score-map/)
 * [Mapping Bus Routes](https://saadiqm.com/react-mapbox-bus-routes/)
 * [Mapping Realtime Bus Locations](http://saadiqm.com/realtime-bus-mapping/)
+* [Comparing Calgary historic streetcar map with present day CTrain](http://saadiqm.com/calgary-streetcar-map-compare/)
 
 #### Machine Learning
 
