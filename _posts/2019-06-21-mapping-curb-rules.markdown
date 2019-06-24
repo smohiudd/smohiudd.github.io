@@ -6,7 +6,7 @@ description: "Curbs are becoming the next public infrastructure digitizing oppor
 excerpt_separator: <!--more-->
 ---
 
-### Curbs are becoming the next public infrastructure digitizing opportunity.In this post, I discuss the process of mapping curb regulations and create my own curb map and rules engine using on street parking rules data and SharedStreets [CurbLR spec](https://github.com/sharedstreets/CurbLR).
+### Curbs are becoming the next public infrastructure digitizing opportunity. In this post, I discuss the process of mapping curb regulations and create my own curb map and rules engine using on street parking rules data and SharedStreets [CurbLR spec](https://github.com/sharedstreets/CurbLR).
 
 <!--more-->
 
@@ -23,10 +23,6 @@ Like any city mapping project, I start with exploring the open data repositories
 !['cpa map'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/cpa_map.png)
 
 Inspecting the code, we see that it references a kml file which we can download. After converting the kml file to geojson using this [Mapbox utility](https://mapbox.github.io/togeojson) we now have file we can work with. We are going to split the data into two tables: one for the **curb geometry** and one for the **curb rules**.
-
-!['kml map'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/kml_1.png)
-
-!['kml map'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/kml_2.png)
 
 #### Processing the rules data
 
@@ -107,7 +103,7 @@ Using the [SharedStreets matching CLI](https://github.com/sharedstreets/sharedst
 shst match 07-18.geojson --search-radius=20 -out=curbmatched.geojson --best-direction
 ```
 
-The output data from the matching API will produce the following:
+The output data from the matching API will produce the following for a single line feature:
 
 ```javascript
 {
@@ -140,7 +136,7 @@ The output data from the matching API will produce the following:
 ```
 #### Curb rules API
 
-Once we have processed our restrictions and geometries we’re ready to create a database and API. From the previous processing steps we have two json files: one array of restriction objects and another of geometry objects. I’m going to use [mongodb Atlas]((https://www.mongodb.com/cloud/atlas)) and [Serverless](https://serverless.com/) to develop my API. We're going to load each json file (rules and geometries) as a separate collections in mongodb and query for rules based on time and day of week.
+Once we have processed our restrictions and geometries we’re ready to create a database and API. From the previous processing steps we have two json files: one array of restriction objects and another of geometry objects. I’m going to use [mongodb Atlas](https://www.mongodb.com/cloud/atlas) and [Serverless](https://serverless.com/) to develop my API, loading each json file (rules and geometries) as a separate collections and query for rules based on time and day of week.
 
 We then combine all the returned restrictions into a geojson FeatureCollection:
 
