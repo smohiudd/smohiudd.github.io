@@ -189,4 +189,4 @@ For example the image below shows just that problem. Our on-street parking datas
 
 CurbLR deals with this by including a priority field for restrictions. The priority field in the spec defines how overlapping restrictions relate to one another (i.e. which one takes priority). In our example above the “no stopping” restriction would take priority over the parking rule. So if you generated rules based on the different datasets then you would know which restriction governs if you have conflicting rules.
 
-!['CurbLR graphic'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/csv_2.png)
+!['CurbLR graphic'](https://github.com/sharedstreets/CurbLR/raw/master/images/curblr_overview.png)
