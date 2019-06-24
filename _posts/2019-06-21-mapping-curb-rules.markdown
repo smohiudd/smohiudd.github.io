@@ -2,13 +2,15 @@
 layout: post
 title:  "Building a Curb Rules Map"
 date:   2019-06-21 00:00:00 -0700
-description: "Curbs are becoming the next public infrastructure digitizing opportunity.In this post, I discuss the process of mapping curb regulations and create my own curb map and rules engine using on street parking rules data and SharedStreets CurbLR spec."
+description: "Curbs are becoming the next public infrastructure digitizing opportunity. In this post, I discuss the process of creating my own curb map and rules engine using on street parking rules data and SharedStreet CurbLR spec."
 excerpt_separator: <!--more-->
 ---
 
-### Curbs are becoming the next public infrastructure digitizing opportunity. In this post, I discuss the process of mapping curb regulations and create my own curb map and rules engine using on street parking rules data and SharedStreets [CurbLR spec](https://github.com/sharedstreets/CurbLR).
+### Curbs are becoming the next public infrastructure digitizing opportunity. In this post, I discuss the process of creating my own [curb map](http://saadiqm.com/curb-rules-map/) and rules engine using on street parking rules data and SharedStreets [CurbLR spec](https://github.com/sharedstreets/CurbLR).
 
 <!--more-->
+
+!['curb map'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/parking_map.PNG)
 
 It's amazing how quickly the curb became a public infrastructure mapping and digitizing focus. And it stands to reason why would it. Ridesharing and autonomous driving companies are often cited as one of the biggest motivators in digitizing curb space. Improved efficiency in drop offs and pickups dictated by available curb space not only improves productivity and customer experience but also keeps private companies on the good side of cities (and the parking authority). Mapping curb rules may also help us improve traffic, mobility and productivity in cities. An [analysis of various parking ‘cruising’ studies](https://www.sciencedirect.com/science/article/pii/S0967070X06000448) by Donald Shoup concluded that on average around 30% of road traffic could be attributed to people finding a place to park on the street. [Another study](https://qz.com/1182385/the-humble-curb-is-fast-becoming-the-citys-hottest-asset/) in Washington DC revealed that the City was losing approximately $650 million a year because of the lack of loading zones for delivery trucks. Trucks were double parking in passenger vehicle locations or just in the middle of the street.
 
@@ -22,7 +24,7 @@ Like any city mapping project, I start with exploring the open data repositories
 
 !['cpa map'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/cpa_map.png)
 
-Inspecting the code, we see that it references a kml file which we can download. After converting the kml file to geojson using this [Mapbox utility](https://mapbox.github.io/togeojson) we now have file we can work with. We are going to split the data into two tables: one for the **curb geometry** and one for the **curb rules**.
+Inspecting the code, we see that it references a kml file which we can download. After converting the kml file to geojson using this [Mapbox utility](https://mapbox.github.io/togeojson) we now have a file we can work with. We are going to split the data into two tables: one for the **curb geometry** and one for the **curb rules**.
 
 #### Processing the rules data
 
@@ -93,7 +95,7 @@ Finally, we need to export the csv table to CurbLR json format. The resulting ou
 
 #### Processing the geometries using SharedStreet Referencing
 
-We’re not sure how the curb geometry was collected for the CPA map. They may have been surveyed in person or simply drawn in GIS using a base map. But we can see by zooming into the map that it does not necessarily line up with adjacent street.
+We’re not sure how the curb geometry was collected for the CPA map. They may have been surveyed in person or simply drawn in GIS using a base map. But we can see by [zooming into the map](http://saadiqm.com/curb-matching-shared-streets/) that it does not necessarily line up with the adjacent street.
 
 SharedStreets referencing helps us in matching the curb geometries to road segments using unique referencing IDs. Although for our purposes this helps in cleaning up our geometries, the real power of the Referencing System comes when we have different datasets referencing the *same* segments. Geospatial datasets from different sources, for example movement data, rideshare pick-up or vehicle speeds are often difficult to relate to city geospatial datasets since they may reference different base maps. By using a shared referencing system, third parties and cities are better able to collaborate using their datasets.
 
