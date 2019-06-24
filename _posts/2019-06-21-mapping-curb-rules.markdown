@@ -16,7 +16,7 @@ It's amazing how quickly the curb became a public infrastructure mapping and dig
 
 It makes sense why some see the curb as an opportunity. And so, companies like [Coord](https://www.coord.co/), a spin-off of [Sidewalk Labs](https://www.sidewalklabs.com/), have been developing tools to help cites map curb rules in detail, releasing the data as part of the curb API – of course at a price. Other endeavors like [SharedStreets](https://sharedstreets.io/), a project of the non-profit Open Transport Partnership are taking a more open data/open-source approach. Their recent flurry of open source releases have paved the way for cities to use their own existing regulation or curb inventory data with SharedStreets [linear referencing tools](https://github.com/sharedstreets/sharedstreets-js) and [curb rule specification](https://github.com/sharedstreets/CurbLR), creating curb data which can then be shared and consumed by third parties.
 
-To understand the potential opportunity in mapping curb rules I wanted to see how the data was used in my own city. In this post, I explore the process of **collecting on street parking data, cleaning the data, creating a curb rules API, and finally a visualization**. This was mostly an exercise in understanding the potential pipeline in processing curb data while using a standard curb rule spec.
+To understand the potential opportunity in mapping curb rules I wanted to see how curb data in my own city could be used. In this post, I explore the process of **collecting on-street parking data, cleaning the data, creating a curb rules API, and finally a visualization**.
 
 #### Finding the data
 
@@ -174,5 +174,19 @@ We then combine all the returned restrictions into a geojson FeatureCollection:
               -114.076197310024,
               51.0523025037092
             ]...
-
+          }
+        }
+      }
 ```
+
+The API endpoint will feed into our [visualization](http://saadiqm.com/curb-rules-map/) which is using Mapbox and Gatsby. We’re able to filter different features of the restriction using Mapbox. As an example, I’ve included two visualizations that toggle parking classes (i.e. Passenger Vehicle, Loading Zone, Taxi Zone etc.) and parking rates.
+
+#### Limitations
+
+I discussed in the data processing section how I assumed that any time intervals that were not included in the parsed parking rules were available as free parking. The problem with this assumption is that we don’t have all the regulatory signage data available to us so we may have conflicting rules with what was included in our on street parking dataset and what rules are actually on the street.
+
+For example the image below shows just that problem. Our on-street parking dataset included rules from the sign on the right but not stopping restrictions from the sign on the left. So therefore our assumption above is incorrect. This problem may stem from the siloed approach of inventory data in some cities. Signage from a revenue generating agency (i.e. on-street-paid parking signs) may be separate from regulatory road signage (i.e. no stopping signs) so you’re not able get a whole picture of the curb restrictions without exploring both datasets.
+
+CurbLR deals with this by including a priority field for restrictions. The priority field in the spec defines how overlapping restrictions relate to one another (i.e. which one takes priority). In our example above the “no stopping” restriction would take priority over the parking rule. So if you generated rules based on the different datasets then you would know which restriction governs if you have conflicting rules.
+
+!['CurbLR graphic'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/csv_2.png)
