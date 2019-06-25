@@ -2,15 +2,26 @@
 layout: post
 title:  "Building a Curb Rules Map"
 date:   2019-06-21 00:00:00 -0700
-description: "Curbs are becoming the next public infrastructure digitizing opportunity. In this post, I discuss the process of creating my own curb map and rules engine using on street parking rules data and SharedStreet CurbLR spec."
+description: "Curbs have become the next public infrastructure digitizing opportunity. In this post, I discuss the process of creating my own curb map and rules engine using on street parking rules data and SharedStreet CurbLR spec."
 excerpt_separator: <!--more-->
 ---
 
-### Curbs are becoming the next public infrastructure digitizing opportunity. In this post, I discuss the process of creating my own [curb map](http://saadiqm.com/curb-rules-map/) and rules engine using on--street parking rules data and SharedStreets draft [CurbLR spec](https://github.com/sharedstreets/CurbLR).
+### Curbs have become the next public infrastructure digitizing opportunity. In this post, I discuss the process of creating my own [curb map](http://saadiqm.com/curb-rules-map/) and rules engine using on--street parking rules data and SharedStreets draft [CurbLR spec](https://github.com/sharedstreets/CurbLR).
 
 <!--more-->
 
-!['curb map'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/parking_map.PNG)
+<style>
+.caption {
+  font-size: 13px;
+  font-style: italic;
+  margin-top:0px;
+  text-align: center;
+}
+</style>
+
+!['curb map'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/parking_rate.png)
+[On-street parking rules map of Calgary](http://saadiqm.com/curb-rules-map/)
+{: .caption}
 
 It's amazing how quickly the curb became a public infrastructure mapping and digitizing focus. And it stands to reason why would it. Ridesharing and autonomous driving companies are often cited as one of the biggest motivators in digitizing curb space. Improved efficiency in drop offs and pickups dictated by available curb space not only improves productivity and customer experience but also keeps private companies on the good side of cities (and the parking authority). Mapping curb rules may also help us improve traffic, mobility and productivity in cities. An [analysis of various parking ‘cruising’ studies](https://www.sciencedirect.com/science/article/pii/S0967070X06000448) by Donald Shoup concluded that on average around 30% of road traffic could be attributed to people finding a place to park on the street. [Another study](https://qz.com/1182385/the-humble-curb-is-fast-becoming-the-citys-hottest-asset/) in Washington DC revealed that the City was losing approximately $650 million a year because of the lack of loading zones for delivery trucks. Trucks were double parking in passenger vehicle locations or just in the middle of the street.
 
@@ -23,6 +34,8 @@ To understand the potential opportunity in mapping curb rules I wanted to see ho
 Like any city mapping project, I start with exploring the open data repositories. Unfortunately, in Calgary on-street parking maps and rules are not available as an open data set. The only option is this [map](https://www.calgaryparking.com/web/guest/findparking/onstreet).
 
 !['cpa map'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/cpa_map.png)
+Calgary Parking Authority on-street parking map
+{: .caption}
 
 Inspecting the code, we see that it references a kml file which we can download. After converting the kml file to geojson using this [Mapbox utility](https://mapbox.github.io/togeojson) we now have a file we can work with. We are going to split the data into two tables: one for the **curb geometry** and one for the **curb rules**.
 
@@ -47,6 +60,8 @@ Inspecting the curb rules data we can see that the all the rules are in html tag
 I’ll spare you all the countless lines of ugly code but eventually I was able extract all the rules using a **lot** of regular expressions (i.e. grepl, grep) functions. The result is a structured csv file with each row representing one **“restriction”**. The term restriction is used by the CurbLR specification to reference a curb rule and defines what is allowed or prohibited at a section of curb, and how the restriction should be applied. You can read more about the CurbLR specification [here](https://github.com/sharedstreets/CurbLR). Please keep in mind that the spec is currently in draft form and will probably change.
 
 !['csv 1'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/csv_1.png)
+On-street parking rules extracted from html tags
+{: .caption}
 
 Calgary’s paid on street parking is distinguished by unique zones. The zones were useful since I could utilize them as a unique IDs and for lookups between the geometry and rules tables. The restrictions for a given zone are defined by a specific time period that you’ll see on a parking sign. For example:
 
@@ -63,6 +78,9 @@ But for our rules API to be effective we need restrictions to cover the full 24 
 We have a minor issue with the time boundaries. If we were to search for parking at 11:00 am then we have two restrictions that satisfy that query. Ideally, we want one parking restriction to govern at a given time. So, we are going to subtract one minute from the end time for each restriction. We also need to convert time variable into a feature that is easily searchable in our database so we'll convert it to seconds. The resulting table looks like this:
 
 !['csv 1'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/csv_2.png)
+On-street parking rules extracted from html tags
+{: .caption}
+
 
 Finally, we need to export the csv table to CurbLR json format. The resulting output for a single restriction in json will look like:
 
@@ -97,12 +115,16 @@ Finally, we need to export the csv table to CurbLR json format. The resulting ou
 
 We’re not sure how the curb geometry was collected for the CPA map. They may have been surveyed in person or simply drawn in GIS using a base map. But we can see by [zooming into the map](http://saadiqm.com/curb-matching-shared-streets/) that it does not necessarily line up with the adjacent street.
 
+!['matched geometry compare'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/match_compare.png)
+[Comparing original geometry vs matched geometry](http://saadiqm.com/curb-matching-shared-streets/)
+{: .caption}
+
 SharedStreets referencing helps us in matching the curb geometries to road segments using unique referencing IDs. Although for our purposes this helps in cleaning up our geometries, the real power of the Referencing System comes when we have different datasets referencing the *same* segments. Geospatial datasets from different sources, for example movement data, rideshare pick-up or vehicle speeds are often difficult to relate to city geospatial datasets since they may reference different base maps. By using a shared referencing system, third parties and cities are better able to collaborate using their datasets.
 
 Using the [SharedStreets matching CLI](https://github.com/sharedstreets/sharedstreets-js) we are able to match our curb geometries to the nearest road segment:
 
 ```shell
-shst match 07-18.geojson --search-radius=20 -out=curbmatched.geojson --best-direction
+shst match original_geometry.geojson --search-radius=20 -out=curbmatched.geojson --best-direction
 ```
 
 The output data from the matching API will produce the following for a single line feature:
@@ -189,10 +211,13 @@ For example the image below shows just that problem. Our on-street parking datas
 
 CurbLR deals with this by including a priority field for restrictions. The priority field in the spec defines how overlapping restrictions relate to one another (i.e. which one takes priority). In our example above the “no stopping” restriction would take priority over the parking rule. So if you generated rules based on the different datasets then you would know which restriction governs if you have conflicting rules.
 
-!['CurbLR graphic'](https://github.com/sharedstreets/CurbLR/raw/master/images/curblr_overview.png)
+!['CurbLR graphic'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/curblr_overview.png)
+Overlapping parking restrictions (source: SharedStreets)
+{: .caption}
+
 
 #### Next steps
 
 The CurbLR spec will probably go through more iterations following feedback from cities so I'm interested to see what it will look like later on. It currently does a good job of representing curb rules while still allowing flexibity to include custom fields.
 
-I'm hoping to continue developing the curb API and map to include other curb rules including no stopping times, snow route parking zones, curb cuts and other curb features.
+I'm hoping to continue developing the curb API and map to include other curb rules including no stopping times, snow route parking zones, curb cuts and other curb features. Stay tuned for updates.
