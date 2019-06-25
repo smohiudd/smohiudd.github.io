@@ -6,7 +6,7 @@ description: "Curbs have become the next public infrastructure digitizing opport
 excerpt_separator: <!--more-->
 ---
 
-### Curbs have become the next public infrastructure digitizing opportunity. In this post, I discuss the process of creating my own [curb map](http://saadiqm.com/curb-rules-map/) and rules engine using on--street parking rules data and SharedStreets draft [CurbLR spec](https://github.com/sharedstreets/CurbLR).
+### Curbs have become the next public infrastructure digitizing opportunity. In this post, I discuss the process of creating my own [curb map](http://saadiqm.com/curb-rules-map/) and rules API using on--street parking rules data and SharedStreets draft [CurbLR spec](https://github.com/sharedstreets/CurbLR).
 
 <!--more-->
 
