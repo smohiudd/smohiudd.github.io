@@ -2,7 +2,7 @@
 layout: post
 title:  "Building a Curb Rules Map"
 date:   2019-06-21 00:00:00 -0700
-description: "Curbs have become the next public infrastructure digitizing opportunity. In this post, I discuss the process of creating my own curb map and rules engine using on street parking rules data and SharedStreet CurbLR spec."
+description: "Curbs have become the next public infrastructure digitizing opportunity. In this post, I discuss the process of creating my own curb map and rules API using on street parking rules data and SharedStreet CurbLR spec."
 excerpt_separator: <!--more-->
 ---
 
@@ -34,7 +34,7 @@ To understand the potential opportunity in mapping curb rules I wanted to see ho
 Like any city mapping project, I start with exploring the open data repositories. Unfortunately, in Calgary on-street parking maps and rules are not available as an open data set. The only option is this [map](https://www.calgaryparking.com/web/guest/findparking/onstreet).
 
 !['cpa map'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/cpa_map.png)
-Calgary Parking Authority on-street parking map
+Calgary Parking Authority (CPA) on-street parking map
 {: .caption}
 
 Inspecting the code, we see that it references a kml file which we can download. After converting the kml file to geojson using this [Mapbox utility](https://mapbox.github.io/togeojson) we now have a file we can work with. We are going to split the data into two tables: one for the **curb geometry** and one for the **curb rules**.
@@ -73,7 +73,7 @@ Mon-Fri 11:00 AM to 3:30 PM
 $4.50 per hour
 ```
 
-But for our rules API to be effective we need restrictions to cover the full 24 day. I wrote a script in to fill in the time gaps. We will assume that if a time period is not listed in the sign then it is free to park there until the next restriction starts. I realized later on that this is not a great assumption, particularly considering the absence of other curb rules not in our dataset which may conflict with my assumption. I will discuss later in the post.
+But for our rules API to be effective we need restrictions to cover the full 24 day. I wrote a script to fill in the time gaps. We will assume that if a time period is not listed in the sign then it is free to park there until the next restriction starts. I realized later on that this is not a great assumption, particularly considering the absence of other curb rules not in our dataset which may conflict with my assumption. I will discuss later in the post.
 
 We have a minor issue with the time boundaries. If we were to search for parking at 11:00 am then we have two restrictions that satisfy that query. Ideally, we want one parking restriction to govern at a given time. So, we are going to subtract one minute from the end time for each restriction. We also need to convert time variable into a feature that is easily searchable in our database so we'll convert it to seconds. The resulting table looks like this:
 
@@ -208,6 +208,11 @@ The API endpoint will feed into our [visualization](http://saadiqm.com/curb-rule
 I discussed in the data processing section how I assumed that any time intervals that were not included in the parsed parking rules were available as free parking. The problem with this assumption is that we don’t have all the regulatory signage data available to us so we may have conflicting rules with what was included in our on street parking dataset and what rules are actually on the street.
 
 For example the image below shows just that problem. Our on-street parking dataset included rules from the sign on the right but not stopping restrictions from the sign on the left. So therefore our assumption above is incorrect. This problem may stem from the siloed approach of inventory data in some cities. Signage from a revenue generating agency (i.e. on-street-paid parking signs) may be separate from regulatory road signage (i.e. no stopping signs) so you’re not able get a whole picture of the curb restrictions without exploring both datasets.
+
+!['CPA Parkign Sign'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/IMG_1355.jpg)
+Calgary Parking Authority on-street parking sign
+{: .caption}
+
 
 CurbLR deals with this by including a priority field for restrictions. The priority field in the spec defines how overlapping restrictions relate to one another (i.e. which one takes priority). In our example above the “no stopping” restriction would take priority over the parking rule. So if you generated rules based on the different datasets then you would know which restriction governs if you have conflicting rules.
 
