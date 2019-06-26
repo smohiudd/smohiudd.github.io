@@ -31,7 +31,7 @@ To understand the potential opportunity in mapping curb rules I wanted to see ho
 
 #### Finding the data
 
-Like any city mapping project, I start with exploring the open data repositories. Unfortunately, in Calgary on-street parking maps and rules are not available as an open data set. The only option is this [map](https://www.calgaryparking.com/web/guest/findparking/onstreet).
+Like any city mapping project, I start with exploring the open data repositories. Unfortunately, in Calgary on-street parking maps and rules are not available as an open data set. The only option is this [map](https://www.calgaryparking.com/web/guest/findparking/onstreet) of **paid on-street parking**.
 
 !['cpa map'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/cpa_map.png)
 Calgary Parking Authority (CPA) on-street parking map
@@ -73,9 +73,9 @@ Mon-Fri 11:00 AM to 3:30 PM
 $4.50 per hour
 ```
 
-But for our rules API to be effective we need restrictions to cover the full 24 day. I wrote a script to fill in the time gaps. We will assume that if a time period is not listed in the sign then it is free to park there until the next restriction starts. I realized later on that this is not a great assumption, particularly considering the absence of other curb rules not in our dataset which may conflict with my assumption. I will discuss later in the post.
+But for our rules API to be effective we need restrictions to cover the full 24 day. I wrote a script to fill in the time gaps. We will assume that if a time period is not listed in the sign then it is free to park there until the next restriction starts. I realized later on that this is not a great assumption, particularly considering the absence of other curb rules (i.e. no stoppin regulatory signs) in our dataset which may conflict with my assumption. I will discuss later in the post.
 
-We have a minor issue with the time boundaries. If we were to search for parking at 11:00 am then we have two restrictions that satisfy that query. Ideally, we want one parking restriction to govern at a given time. So, we are going to subtract one minute from the end time for each restriction. We also need to convert time variable into a feature that is easily searchable in our database so we'll convert it to seconds. The resulting table looks like this:
+We have a minor issue with the time boundaries. If we were to search for parking at 11:00 am in the example above then we have two restrictions that satisfy that query. Ideally, we want one parking restriction to govern at a given time. So, we are going to subtract one minute from the end time for each restriction. We also need to convert time into a feature that is easily searchable in our database so we'll convert it to seconds. The resulting table looks like this:
 
 !['csv 1'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/csv_2.png)
 On-street parking rules extracted from html tags
@@ -119,7 +119,7 @@ We’re not sure how the curb geometry was collected for the CPA map. They may h
 [Comparing original geometry vs matched geometry](http://saadiqm.com/curb-matching-shared-streets/)
 {: .caption}
 
-SharedStreets referencing helps us in matching the curb geometries to road segments using unique referencing IDs. Although for our purposes this helps in cleaning up our geometries, the real power of the Referencing System comes when we have different datasets referencing the *same* segments. Geospatial datasets from different sources, for example movement data, rideshare pick-up or vehicle speeds are often difficult to relate to city geospatial datasets since they may reference different base maps. By using a shared referencing system, third parties and cities are better able to collaborate using their datasets.
+[SharedStreets referencing](https://github.com/sharedstreets/sharedstreets-ref-system) helps us in matching the curb geometries to road segments using unique referencing IDs. Although for our purposes this helps in cleaning up our geometries, the real power of the Referencing System comes when we have different datasets referencing the *same* segments. Geospatial datasets from different sources, for example movement data, rideshare pick-up or vehicle speeds are often difficult to relate to city geospatial datasets since they may reference different base maps. By using a shared referencing system, third parties and cities are better able to collaborate using their datasets.
 
 Using the [SharedStreets matching CLI](https://github.com/sharedstreets/sharedstreets-js) we are able to match our curb geometries to the nearest road segment:
 
@@ -201,7 +201,7 @@ We then combine all the returned restrictions into a geojson FeatureCollection:
       }
 ```
 
-The API endpoint will feed into our [visualization](http://saadiqm.com/curb-rules-map/) which is using Mapbox and Gatsby. We’re able to filter different features of the restriction using Mapbox. As an example, I’ve included two visualizations that toggle parking classes (i.e. Passenger Vehicle, Loading Zone, Taxi Zone etc.) and parking rates.
+The API endpoint will feed into our [visualization](http://saadiqm.com/curb-rules-map/) which is using Mapbox and [Gatsby](https://www.gatsbyjs.org/) for UI. We’re able to filter different features of the restriction using Mapbox. As an example, I’ve included two visualizations that toggle parking classes (i.e. Passenger Vehicle, Loading Zone, Taxi Zone etc.) and parking rates.
 
 #### Challenges and Limitations
 
@@ -214,7 +214,7 @@ Calgary Parking Authority on-street parking sign
 {: .caption}
 
 
-CurbLR deals with this by including a priority field for restrictions. The priority field in the spec defines how overlapping restrictions relate to one another (i.e. which one takes priority). In our example above the “no stopping” restriction would take priority over the parking rule. So if you generated rules based on the different datasets then you would know which restriction governs if you have conflicting rules.
+CurbLR deals with this by including a **priority field** for restrictions. The priority field in the spec defines how overlapping restrictions relate to one another (i.e. which one takes priority). In our example above the “no stopping” restriction would take priority over the parking rule. So if you generated rules based on the different datasets then you would know which restriction governs if you have conflicting rules.
 
 !['CurbLR graphic'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/curb_rules/curblr_overview.png)
 Overlapping parking restrictions (source: SharedStreets)
@@ -226,3 +226,5 @@ Overlapping parking restrictions (source: SharedStreets)
 The CurbLR spec will probably go through more iterations following feedback from cities so I'm interested to see what it will look like later on. It currently does a good job of representing curb rules while still allowing flexibity to include custom fields.
 
 I'm hoping to continue developing the curb API and map to include other curb rules including no stopping times, snow route parking zones, curb cuts and other curb features. Stay tuned for updates.
+
+Link to visualization github repo: <https://github.com/smohiudd/curb-rules-map>
