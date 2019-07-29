@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Exploratory Geospatial Analysis of Property Assessments using Deck.gl"
-date:   2019-06-28 00:00:00 -0700
+date:   2019-07-28 00:00:00 -0700
 description: ""
 excerpt_separator: <!--more-->
 ---
@@ -20,7 +20,7 @@ excerpt_separator: <!--more-->
 </style>
 
 !['nr screenshot'](https://s3-us-west-2.amazonaws.com/smohiudd.github.co/deckgl-assessment/nr_screenshot.png)
-Deck.gl [map](https://saadiqm.com/deck-gl-assessment-map-nr/) hexagonal aggregation of residential property values
+Deck.gl [map](https://saadiqm.com/deck-gl-assessment-map-nr/) scatterplot layer of residential property values
 {: .caption}
 
 *Link to [Residential Map](https://saadiqm.com/deck-gl-assessment-map-re/) and [Non-Residential Map](https://saadiqm.com/deck-gl-assessment-map-nr/)*
