@@ -13,3 +13,5 @@ permalink: /about/
 [Twitter](https://twitter.com/saadiqmohiuddin)
 [Linkedin](https://www.linkedin.com/in/saadiqmohiuddin/)
 [Github](https://github.com/smohiudd)
+
+*You can also email me at saadiq.mohiuddin[at]gmail.com*
