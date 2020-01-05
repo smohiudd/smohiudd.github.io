@@ -59,7 +59,7 @@ The time period covered in the datasets are approximately between May 1- May 30 
 
 #### Using Vehicle Position Data
 
-AVL and APC systems are increasingly used by transit agencies to closely monitor efficiency and reliability, ultimately using the data to improve performance and in turn customer satisfaction. On Time Performance and Schedule Adherence are two measures that are commonly used to determine service reliability of buses in a transit system (NCTR, 2016). Schedule adherence refers to the difference between real-time and scheduled times of arrival and departure. On Time Performance measures the percentage of all schedule deviations that are within a defined range (i.e 1 min early or 5 min late):
+AVL and APC systems are increasingly used by transit agencies to closely monitor efficiency and reliability, ultimately using the data to improve performance and customer satisfaction. On Time Performance and Schedule Adherence are two measures that are commonly used to determine service reliability of buses in a transit system (NCTR, 2016). Schedule adherence refers to the difference between real-time and scheduled times of arrival and departure. On Time Performance measures the percentage of all schedule deviations that are within a defined range (i.e 1 min early or 5 min late):
 
 > On-time performance = services on time/all services x 100
 
