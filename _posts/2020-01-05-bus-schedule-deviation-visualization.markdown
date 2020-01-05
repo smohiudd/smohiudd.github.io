@@ -6,7 +6,7 @@ description: ""
 excerpt_separator: <!--more-->
 ---
 
-### Using data released as part of the Canadian Urban Transit Association "Data Challenge" I created a system wide [visualization of bus schedule deviation](http://saadiqm.com/bus-on-time-performance/) for Calgary Transit buses. The analysis and visualization help us understand how well certain bus routes perform and potentially where to focus improvements.
+### Using data released as part of the Canadian Urban Transit Association "Data Blitz" I created a system wide [visualization of bus schedule deviation](http://saadiqm.com/bus-on-time-performance/) for Calgary Transit buses. The analysis and visualization help us understand how well certain bus routes perform and potentially where to focus improvements.
 
 <!--more-->
 
@@ -27,7 +27,7 @@ excerpt_separator: <!--more-->
 }
 </style>
 
-In November 2019 the City of Calgary hosted the [Canadian Urban Transit Association (CUTA) annual conference](https://cutaactu.ca/en/events-training/cuta-annual-conference-and-transit-show-2019) and introduced the inaugural “CUTA Data Challenge”. The conference organizers engaged teams of consultants, academics, data scientists and others to explore a set AVL (Automatic Vehicle Location) and GTFS data and evaluate the efficacy of systemwide bus route changes in Calgary between 2018 and 2019. The system changes were a result of implementing a number of [Bus Rapid Transit (BRT)](https://www.calgarytransit.com/plans-projects/bus-rapid-transit-brt) Lines in Calgary in December 2018.
+In November 2019 the City of Calgary hosted the [Canadian Urban Transit Association (CUTA) annual conference](https://cutaactu.ca/en/events-training/cuta-annual-conference-and-transit-show-2019) and introduced the inaugural “CUTA Data Blitz”. The conference organizers engaged teams of consultants, academics, data scientists and others to explore a set AVL (Automatic Vehicle Location) and GTFS data and evaluate the efficacy of systemwide bus route changes in Calgary between 2018 and 2019. The system changes were a result of implementing a number of [Bus Rapid Transit (BRT)](https://www.calgarytransit.com/plans-projects/bus-rapid-transit-brt) Lines in Calgary in December 2018.
 
 Although I didn’t personally participate in the challenge, I wanted to see what I could do with the data which was released on the Calgary [Open Data portal](https://data.calgary.ca/).
 
