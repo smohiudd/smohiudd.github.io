@@ -108,6 +108,8 @@ The results of the visualization seem reasonable and intuitively make sense (*of
 Final visualization with the ability to filter various parameters
 {: .caption}
 
+**Here is a link to the visualization [repo](https://github.com/smohiudd/bus-on-time-performance). Made using React/Gatsby and Mapbox.**
+
 #### Further Analysis
 
 I calculated the aggregate average schedule deviation given a set of filter parameters (i.e. time of day, day of week). Standard deviation of the schedule deviation would also be be useful output. A lower standard deviation would imply a greater stability in performance at a given stop and could give us some insight into the reliability at certain stops (Chakrabarti, 2015).
