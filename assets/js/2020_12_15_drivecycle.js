@@ -20,7 +20,7 @@ function responsivefy(svg) {
     }
   }
 
-const transitland_endpoint = 'http://transit.land/'
+const transitland_endpoint = 'https://transit.land/'
 const drivecycle_endpoint = 'https://b9d8625q6c.execute-api.us-east-1.amazonaws.com/'
 
 var margin = { top: 40, right: 50, bottom: 60, left: 60 }
