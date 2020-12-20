@@ -48,7 +48,7 @@ Drive cycles have traditionally been used in the automotive industry to test the
 
 In an EV context, the drive cycle can play a more central role in gauging energy consumption of the vehicle or battery state of charge (SOC). By generating a simulated drive cycle of the vehicle's trip, from origin to destination, and considering factors such as elevation change, driver behaviour or weather, we can estimate energy consumption.
 
-For BEBs, transportation engineers and planners are able to generate representative drive cycles using actual GPS data and can use that data along with factors such as number of passengers on board to model the energy consumption of a route. But using this method depends on the availability of high quality GPS data and the ability to clean, aggregate and validate the data to create a representative drive cycle for a route.
+For electric buses, transportation engineers and planners are able to generate representative drive cycles using actual GPS data and can use that data along with factors such as number of passengers on board to model the energy consumption of a route. But using this method depends on the availability of high quality GPS data and the ability to clean, aggregate and validate the data to create a representative drive cycle for a route.
 
 ### I wanted to explore if there was a way to generalize a drive cycle using OSM speed limit data, OSM intersection nodes and stop locations in the absence GPS data. Would it be possible to use this drive cycle to determine a very rough estimation of energy consumption? 
 
