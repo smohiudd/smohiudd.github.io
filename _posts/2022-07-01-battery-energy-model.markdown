@@ -6,7 +6,7 @@ description: ""
 excerpt_separator: <!--more-->
 ---
 
-### Modelling electric vehicles (EV) performance and range is a critical aspect to address fears of so-called range anxiety. Understanding battery performance is one of the more effective ways to do this. I explore the science (and equations) behind modelling battery State of Change (SoC) and how they are used in [Drivecycle](https://github.com/smohiudd/drivecycle).
+### Modelling electric vehicles (EV) performance and range is an important aspect in addressing fears of so-called range anxiety. Understanding battery performance is one of the more effective ways to do this. I explore the science (and equations) behind modelling battery State of Change (SoC) and how they are used in [Drivecycle](https://github.com/smohiudd/drivecycle).
 <!--more-->
 
 <style>
