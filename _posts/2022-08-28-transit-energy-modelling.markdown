@@ -6,7 +6,7 @@ description: ""
 excerpt_separator: <!--more-->
 ---
 
-### Designing a schedule for electric buses takes more than simply replacing the same service delivered by diesel buses. Due to range limitations of EVs, understanding how battery state of charge changes over a route is important. In this post I introduce a way to determine energy consumption metrics using a Transit Drivecyle <a href="http://drivecycle.eastus.azurecontainer.io" target="_blank">visualization tool</a> that uses the <a href="https://github.com/smohiudd/drivecycle" target="_blank">Drivecycle</a> python package.
+### Designing a schedule for electric buses takes more than simply replacing the same service delivered by diesel buses. Due to range limitations of EVs, understanding how battery state of charge changes over a route is important. In this post I introduce a way to determine energy consumption metrics using a Transit Drivecycle <a href="http://drivecycle.eastus.azurecontainer.io" target="_blank">visualization tool</a> that uses the <a href="https://github.com/smohiudd/drivecycle" target="_blank">Drivecycle</a> python package.
 <!--more-->
 
 <style>
