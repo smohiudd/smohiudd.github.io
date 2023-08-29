@@ -6,7 +6,7 @@ description: ""
 excerpt_separator: <!--more-->
 ---
 
-### Research has shown how urban forests have a number of social, environmental and economic benefits in cities. They will play in important role in climate change adaptation in urban areas.
+### Research has shown how urban forests have a number of social, environmental and economic benefits in cities. They will play an important role in climate change adaptation in urban areas.
 <!--more-->
 
 <style>
