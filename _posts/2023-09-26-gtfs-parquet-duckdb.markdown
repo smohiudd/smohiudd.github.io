@@ -6,7 +6,7 @@ description: ""
 excerpt_separator: <!--more-->
 ---
 
-### GTFS data is typically served though traditional relational database systems such as PostGreSQL or SQlite. Using DuckDB and Parquet opens the door for analyzing GTFS using cloud optimized data.
+### GTFS data is typically served though traditional relational database systems such as PostGreSQL or SQlite. Using DuckDB and Parquet opens the door for analyzing GTFS data in the browser using a cloud native data format.
 <!--more-->
 
 <style>
