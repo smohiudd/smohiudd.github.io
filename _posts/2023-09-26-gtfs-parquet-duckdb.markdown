@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Query GTFS Parquet Data in the Browser with DuckDB-Wasm"
-date:   2023-08-26 00:00:00 -0700
+date:   2023-09-26 00:00:00 -0700
 description: ""
 excerpt_separator: <!--more-->
 ---
@@ -84,6 +84,6 @@ db.queryStream(`
   ` )
 
 ```
-Please see the repo for more details of the implementation: [https://github.com/smohiudd/gtfs-parquet-duckdb-wasm](https://github.com/smohiudd/gtfs-parquet-duckdb-wasm) 
+Please check out the repo for more details of this implementation: [https://github.com/smohiudd/gtfs-parquet-duckdb-wasm](https://github.com/smohiudd/gtfs-parquet-duckdb-wasm) 
 
-The result is a snappy visualization that directly queries GTFS Parquet files without the need to setup a PostGreSQL database or an API service. It allows the possibility to analyzing GTFS data using cloud optimized format using cloud native applications.
+The result is a snappy visualization that directly queries GTFS Parquet files without the need to setup a PostGreSQL database or an API service, allowing the possibility of analyzing GTFS data using cloud native applications.
