@@ -113,7 +113,7 @@ By doing a comparison on the tree cover by community we can see how each of the 
 | Kincora | 4.76% | 4.40% | 43.91% |
 | Country Hills Village | 4.99% | 8.35% | 29.79% |
 
-# Highet Canopy Cover by Community
+# Highest Canopy Cover by Community
 
 | Community Name | CHM (LiDAR) | CHM (Satellite) | NDVI |
 | --- | --- | --- | ---: |
