@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Pedestrian Collision Hot Spot Detection Using Machine Learning and Embeddings"
-date:   2023-12-05 00:00:00 -0700
+date:   2023-12-16 00:00:00 -0700
 description: ""
 excerpt_separator: <!--more-->
 ---
