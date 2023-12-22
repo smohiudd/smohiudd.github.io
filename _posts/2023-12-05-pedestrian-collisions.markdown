@@ -42,7 +42,7 @@ Road design undoubtedly plays one of the biggest roles. Slip lanes, wide and num
 
 What role can geospatial data science play in understanding how these road designs and other urban features affect the probability of collisions? 
 
-I explored this relationship using the [traffic “incident” dataset in Calgary](https://data.calgary.ca/Transportation-Transit/Traffic-Incidents/35ra-9556). The dataset covers all road incidents including stalled vehicles, vehicle collisions as well as pedestrian collisions. My goal was to develop a **binary classification machine learning model** that predicts the probability of a pedestrian collision occurrence across Calgary given some input temporal (month, hour of day and day of week) and geographic features ([OSM tags](https://wiki.openstreetmap.org/wiki/Tags)). The output is a map that shows hot spot pedestrian collision locations across the city at various times. In this post I explore my methodology and the key idea of using [embeddings](https://developers.google.com/machine-learning/crash-course/embeddings/video-lecture) (thanks to the recently released [srai](https://github.com/kraina-ai/srai) python package) to help train machine learning models for geospatial tasks.
+I explored this relationship using the [traffic “incident” dataset in Calgary](https://data.calgary.ca/Transportation-Transit/Traffic-Incidents/35ra-9556). The dataset covers all road incidents including stalled vehicles, vehicle collisions as well as pedestrian collisions. My goal was to develop a toy **binary classification machine learning model** that predicts the probability of a pedestrian collision occurrence across Calgary given some input temporal (month, hour of day and day of week) and geographic features ([OSM tags](https://wiki.openstreetmap.org/wiki/Tags)). The output is a map that shows hot spot pedestrian collision locations across the city at various times. In this post I explore my methodology and the key idea of using [embeddings](https://developers.google.com/machine-learning/crash-course/embeddings/video-lecture) (thanks to the recently released [srai](https://github.com/kraina-ai/srai) python package) to help train machine learning models for geospatial tasks.
 
 You can find the jupyter notebooks of this work on [github](https://github.com/smohiudd/pedestrian-collision-prediction).
 
@@ -128,5 +128,8 @@ The pedestrian collision hot spot detection task above used GeoVex embedding at 
 
 You can find jupyter notebooks on [github](https://github.com/smohiudd/pedestrian-collision-prediction) to reproduce the results.
 
+# Discussion
 
+- The negative sampling approach involved randomly selecting road locations along the OSM network and then using a perfectly balanced split between positive (collision locations) and negative (no collision locations) targets. This was used to simplify the experiment and help in validation. Considering that collisions in general are relatively low probability events, the balanced strategy does not reflect the actual distribution of collisions occurring. A more appropriate strategy may be to over sample the negative targets and use sample weights for training.
 
+- The OSM tags used in the [GEOFABRIK layer](https://github.com/kraina-ai/srai/blob/main/srai/loaders/osm_loaders/filters/geofabrik.py) are exhaustive. The selected tags will impact the model results. I didn't fine tune the selected tags and this may require some experimentation to see how it impacts the model.
