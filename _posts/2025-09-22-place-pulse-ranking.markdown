@@ -25,13 +25,15 @@ excerpt_separator: <!--more-->
 
 I’ve always been curious about how we visually perceive streetscapes. In an earlier project, I built a [deep learning model](https://saadiqm.com/2020/05/15/streetscape-quality-deeplab.html) to segment features like roads, sidewalks, and sky, and used this information to estimate the overall "quality" of a street. This idea isn’t new. For example, Naik et al. (2014) at MIT Media Lab developed a StreetScore algorithm that used regression models and generic image features to predict perceived street safety. Later, Ma et al. (2020) applied semantic segmentation to classify elements such as trees, buildings, and pavement, creating indexes based on the proportion of pixels each feature occupied in an image. Related measures like the “green view” and “sky view” indexes were also used in the Global Streetscapes project by Hou et al. (2024).
 
+<img src="{{site.baseurl}}/assets/img/place_pulse_image_pairs.png">
+Sample of pairwise comparisons in Place Pulse 2.0 dataset
+{: .caption}
+
 I wanted to build on this line of work using the Place Pulse 2.0 dataset, introduced by Dubey et al. (2016), to train a model that ranks street view images across six attributes: safe, lively, boring, wealthy, depressing, and beautiful. Place Pulse 2.0 is a large dataset, with 1,170,000 pairwise comparisons between 110,988 Google Street View images collected from 56 cities over 33 months. Participants were asked to compare two images at a time on one of the six attributes. One limitation however is that the paper doesn’t clearly define what “safety” means. Whether it refers to personal safety or safety related to walking, biking, or other modes of travel. Still, the authors note strong correlations between safety and beauty, as well as safety and liveliness, supporting ideas in urban design that link safer streets with more vibrant environments.
 
 Using the pairwise comparisons they used the [TrueSkill ranking algorithm](https://proceedings.neurips.cc/paper_files/paper/2006/file/f44ee263952e65b3610b8ba51229d1f9-Paper.pdf) to generate scores for each of the images between 0 and 10. However the main challenge with that method is that any given image needs roughly 24-36 comparisons to achieve stable rankings. This would require 1.2 to 1.9 million comparisons per attribute! 
 
-<img src="{{site.baseurl}}/assets/img/place_pulse_image_pairs.png">
-Sample of pairwise comparisons in Place Pulse 2.0 dataset
-{: .caption}
+
 
 ## Ranking vs Scoring
 
