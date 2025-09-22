@@ -19,7 +19,7 @@ excerpt_separator: <!--more-->
 </style>
 
 
-### Using crowd-sourced comparisons of Google Street View images, I explored how people perceive safety in urban environments. By combining a large dataset with modern computer vision techniques, I trained a model that can rank streets based on how safe they appear.
+### Using crowd-sourced comparisons of street view images, I explored how people perceive safety in urban environments. By combining a large dataset with modern computer vision techniques, I trained a model that can rank streets based on how safe they appear.
 <!--more-->
 
 
