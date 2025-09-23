@@ -51,6 +51,8 @@ Here’s how it worked step by step:
   - Trip ID
   - GPS latitude and longitude
 
+One limitation of using AWS EventBridge is that it [doesn't provide second level precision for the scheduler](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html); the minimum resolution is one minute. Some transit agencies, including Calgary Transit have **15 second resolution** for their vehicle positions meaning we are missing some of the data in our ETL pipeline. To achieve sub minute schedules, other services would be needed such as Step Functions or an EC2 Instance.
+
 This design was both scalable and automated, capable of handling millions of records without dedicated servers. Between **November 1 and November 9, 2024**, the pipeline collected over 2 million records. It cost approximately $10 USD to operate the AWS services listed above during that period.
 
 ## From Raw Data to Schedule Deviations
