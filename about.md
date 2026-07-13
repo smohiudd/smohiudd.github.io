@@ -12,6 +12,10 @@ permalink: /about/
 
 ## Talks
 
+#### Transit Data Symposium (June 23-25 2026)
+- Transit Equity Score: A Novel Framework Combining Socioeconomic, Accessibility and Reliability Data ([link](/assets/files/TransitEquityScore.pdf))
+- Storing and Sharing Transit Data at Scale: A Workflow for Big Data Without Big Costs ([link](/assets/files/GTFSRT_Data.pdf))
+
 #### American Geophysical Union (AGU) Annual Conference (Dec 9, 2024)
 - On-the-fly Raster Visualizations Leveraging STAC Metadata Standards
 
@@ -19,7 +23,7 @@ permalink: /about/
 - Mapping the Urban Forest: Tools for Bringing the Canopy to All ([link](https://www.sustainabilitynetwork.ca/past-events/urban-trees-bringing-the-canopy-to-all))
 
 #### Transportation Research Board (TRB) Transit Data Challenge (Jan 7, 2024)
-- Estimating Bus Speed Profiles and Energy Consumption using Open-Source Tools and its Application to Electrification Planning ([link](https://www.trb-transit-mgmt-perf.org/annual-meetings/transit-data-challenge#h.gkd0sehzwsz9))
+- [First Place Winner] Estimating Bus Speed Profiles and Energy Consumption using Open-Source Tools and its Application to Electrification Planning ([link](https://www.trb-transit-mgmt-perf.org/annual-meetings/transit-data-challenge#h.gkd0sehzwsz9))
 
 #### City of Calgary Society of Professional Engineers (Nov 24, 2022)
 - Calgary Transit Bus Electrification Program
