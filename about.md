@@ -17,7 +17,7 @@ permalink: /about/
 - Storing and Sharing Transit Data at Scale: A Workflow for Big Data Without Big Costs ([link](/assets/files/GTFSRT_Data.pdf))
 
 #### American Geophysical Union (AGU) Annual Conference (Dec 9, 2024)
-- On-the-fly Raster Visualizations Leveraging STAC Metadata Standards
+- On-the-fly Raster Visualizations Leveraging STAC Metadata Standards ([link](https://ntrs.nasa.gov/citations/20240014815))
 
 #### Nature Canada/Sustainability Network (Sept 4, 2024)
 - Mapping the Urban Forest: Tools for Bringing the Canopy to All ([link](https://www.sustainabilitynetwork.ca/past-events/urban-trees-bringing-the-canopy-to-all))
