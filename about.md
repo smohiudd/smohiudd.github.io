@@ -12,6 +12,9 @@ permalink: /about/
 
 ## Talks
 
+#### Data For Good Calgary (Sept 28, 2026)
+- Mapping Tree Canopy and Tree Equity in Calgary: Visualization and Analysis using Open Data ([link](/assets/files/Data_for_good_Sept282026.pdf))
+
 #### Transit Data Symposium (June 23-25 2026)
 - Transit Equity Score: A Novel Framework Combining Socioeconomic, Accessibility and Reliability Data ([link](/assets/files/TransitEquityScore.pdf))
 - Storing and Sharing Transit Data at Scale: A Workflow for Big Data Without Big Costs ([link](/assets/files/GTFSRT_Data.pdf))
